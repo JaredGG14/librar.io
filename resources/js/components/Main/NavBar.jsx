@@ -20,28 +20,28 @@ function NavBar() {
 
     return (
         <>
-            <nav class="navbar navbar-primary bg-white bg-gradiant px-3" >
+            <nav class="navbar NavbarColor bg-gradiant px-3" >
                 <div class="container-fluid">
                     {token !== null ? (
                         <Row>
                             <Col>
-                                <Navbar.Brand as={Link} to="/librar.io/public/main"><img src='https://i.imgur.com/zcpzOlE.png' height="50px"></img></Navbar.Brand>
+                                <Navbar.Brand as={Link} to="/librar.io/public/main"><img src='https://i.imgur.com/euLIvmV.png' height="50px"></img></Navbar.Brand>
                             </Col>
 
                             <Col className='py-2'>
-                                <Button variant='outline-dark' as={Link} to="/librar.io/public/bookshelf/">Bookshelf</Button>
+                                <Button variant='text' as={Link} to="/librar.io/public/bookshelf/">Bookshelf</Button>
                             </Col>
                             <Col className='py-2'>
-                                <Button variant='outline-dark' as={Link} to="/librar.io/public/discover/">Discover</Button>
+                                <Button variant='text' as={Link} to="/librar.io/public/discover/">Discover</Button>
                             </Col>
                             <Col className='py-2'>
-                                <Button variant='outline-dark' as={Link} to="/librar.io/public/goal/">Goal</Button>
+                                <Button variant='text' as={Link} to="/librar.io/public/goal/">Goal</Button>
                             </Col>
                         </Row>
                     ) : (
                         <Row>
                             <Col>
-                            <Navbar.Brand as={Link} to="/librar.io/public/"><img src='https://i.imgur.com/zcpzOlE.png' height="50px"></img></Navbar.Brand>
+                            <Navbar.Brand as={Link} to="/librar.io/public/"><img src='https://i.imgur.com/euLIvmV.png' height="50px"></img></Navbar.Brand>
                             </Col>
 
                         </Row>
