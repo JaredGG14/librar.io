@@ -11,11 +11,11 @@ class BookController extends Controller
         $books = book::all();
         return $books;
     }
+
     public function book_id($id){
         $book_id = book::where('id', $id) -> with('author') -> first();
         return $book_id;
     }
 
-
-
+    
 }

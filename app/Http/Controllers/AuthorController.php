@@ -12,4 +12,19 @@ class AuthorController extends Controller
         $author = author::all();
         return $author;
     }
+
+    public function store()
+    {
+        
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function destroy()
+    {
+
+    }
 }

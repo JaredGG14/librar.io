@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->float('score', 5, 2);
+            $table->float('score', 5, 2)->nullable();
             $table->string('review')->nullable();
             $table->date('finished_at')->nullable();
             $table->timestamps();

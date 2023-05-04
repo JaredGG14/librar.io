@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Validator;
 
-
-class PassportAuthController extends ResponseController
+class PassportAuthController extends Controller
 {
     public function register(Request $request){
         $this->validate($request, [
@@ -36,18 +33,13 @@ class PassportAuthController extends ResponseController
             'email' => $request->email,
             'password'=> $request->password
         ];
-
-        // Validamos los datos y además mandamos como un segundo parámetro la opción de recordar el usuario.
+        
         if(auth()->attempt($userdata))
-        {
-            // De ser datos válidos nos mandara a la bienvenida
-            
-            $token = auth()->user()->createToken("LaravelAuthApp")->accessToken;
-            $userdata = auth()->user();
-            
+        {            
+            $token = auth() -> user() -> createToken("LaravelAuthApp")->accessToken;
+            $userdata = auth() -> user();
             return response()->json(["token" => $token, "user" => $userdata], 200);
         } else{
-         // En caso de que la autenticación haya fallado manda un mensaje al formulario de login.
             return response()->json(["error" => "Unathorized"], 401);
         }
     }
