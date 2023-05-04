@@ -34,7 +34,7 @@ function Login() {
                 localStorage.setItem("user", JSON.stringify(response.data.user));
                 setUser(response.data.user);
                 localStorage.setItem("user_email", response.data.user.email);
-                localStorage.setItem("user_name", response.data.user.name);
+                localStorage.setItem("user_id", response.data.user.id);
                 alert("Log in, welcome " + response.data.user.name);
                 navigate('/librar.io/public/user');
 

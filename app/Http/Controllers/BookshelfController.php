@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class BookshelfController extends Controller
 {
+    //shows teh bookshelf selecting only the score, review and finished at columns, because we need to get the info of the foreign keys
+    //So we don't need the user_id nor book_id.
     public function index($user){
         $bookshelf = bookshelf::select('score', 'review', 'finished_at')
         ->where('user_id', $user)
@@ -17,6 +19,7 @@ class BookshelfController extends Controller
         return $bookshelf;
     }
 
+    //Global reviews of the books, this method will get all records of the reviews of every user. (Part of the mainscreen)
     public function latest_reviews(){
         $bookshelf = bookshelf::select('score', 'review', 'finished_at')
         ->latest()
@@ -28,6 +31,7 @@ class BookshelfController extends Controller
         return $bookshelf;
     }
 
+    //Reviews from the book that we are looking
     public function reviews_section($book_id){
         $bookshelf = bookshelf::select('score', 'review', 'finished_at')->where('book_id', $book_id)->with('user:photo, nickname')->take(30)->get();
         return $bookshelf;

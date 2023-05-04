@@ -13,18 +13,34 @@ class AuthorController extends Controller
         return $author;
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $author = new author();
+        $author -> name = $request -> name;
+        $author -> last_name = $request -> last_name;
+        $author -> birthdate = $request -> birthdate;
+        $author -> deathday = $request -> deathday; //it can be null
+        $author -> birthplace = $request -> birthplace;
+        $author->save();
         
+        return $author;
     }
 
-    public function update()
+    public function update(Request $request)
     {
-
+        $author = author::find($request->id);
+        $author -> name = $request -> name;
+        $author -> last_name = $request -> last_name;
+        $author -> birthdate = $request -> birthdate;
+        $author -> deathday = $request -> deathday; //it can be null
+        $author -> birthplace = $request -> birthplace;
+        $author->save();
+        
+        return $author;
     }
 
-    public function destroy()
+    public function destroy(Request $request)
     {
-
+        $author = author::destroy($request -> id);
     }
 }
