@@ -18,9 +18,6 @@ class AuthorController extends Controller
         $author = new author();
         $author -> name = $request -> name;
         $author -> last_name = $request -> last_name;
-        $author -> birthdate = $request -> birthdate;
-        $author -> deathday = $request -> deathday; //it can be null
-        $author -> birthplace = $request -> birthplace;
         $author->save();
         
         return $author;
@@ -31,9 +28,6 @@ class AuthorController extends Controller
         $author = author::find($request->id);
         $author -> name = $request -> name;
         $author -> last_name = $request -> last_name;
-        $author -> birthdate = $request -> birthdate;
-        $author -> deathday = $request -> deathday; //it can be null
-        $author -> birthplace = $request -> birthplace;
         $author->save();
         
         return $author;

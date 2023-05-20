@@ -7,12 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class bookshelf extends Model
 {
+
+    
     use HasFactory;
-    public function books(){
-        return $this -> hasMany(book::class);
+    public function book(){
+        return $this -> belongsTo(book::class);
     }
 
     public function users(){
         return $this -> hasMany(User::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
     }
 }

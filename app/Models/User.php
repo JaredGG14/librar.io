@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -45,5 +45,9 @@ class User extends Authenticatable
 
     public function goal(){
         return $this -> belongsTo(goal::class);
+    }
+
+    public function user_status(){
+        return $this -> hasMany(status_user::class);
     }
 }

@@ -37,12 +37,21 @@ class GoalController extends Controller
     public function checking_goal($user)
     {
         $user_goal = goal::where('user_id', $user)->get();
-        if ($user_goal->current_books  >= $user_goal->book_goal) {
-            $goal_status = "Finished";
+        $currentBooks = $user_goal->pluck('current_books');
+        $bookGoal = $user_goal->pluck('book_goal');
+
+
+        if ($user_goal -> isEmpty()) {
+            $goal_status = "New";
             return $goal_status;
         } else {
-            $goal_status = "On going";
-            return $goal_status;
+            if ($currentBooks  >= $bookGoal) {
+                $goal_status = "Finished";
+                return $goal_status;
+            } elseif ($currentBooks < $bookGoal) {
+                $goal_status = "On going";
+                return $goal_status;
+            }
         }
     }
 

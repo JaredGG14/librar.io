@@ -9,7 +9,7 @@ class status extends Model
 {
     use HasFactory;
 
-    public function status_user(){
-        return $this -> belongsTo(status_user::class);
+    public function bookshelf(){
+        return $this -> belongsTo(bookshelf::class);
     }
 }

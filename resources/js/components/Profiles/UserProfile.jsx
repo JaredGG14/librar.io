@@ -1,11 +1,11 @@
 import React from 'react';
 
-function mainPage() {
+function UserProfile() {
     return (
         <div>
-            mainPage
+            
         </div>
     );
 }
 
-export default mainPage;
+export default UserProfile;

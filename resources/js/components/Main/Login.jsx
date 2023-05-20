@@ -12,12 +12,9 @@ function Login() {
 
     const { setUserLogged, setUser } = useContext(AuthContext);
     const [textError, setTextError] = useState('');
-    const [formOk, setFormOk] = useState(true);
 
     const login = async (e) => {
         e.preventDefault();
-        console.log("Login")
-
         const headers = {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -29,37 +26,23 @@ function Login() {
             }, headers)
             .then(response => {
                 localStorage.setItem("token", response.data.token);
-                //console.log("token: ", response.data.token);
-                setUserLogged(true);
+                localStorage.setItem("user_id", response.data.user.id);
                 localStorage.setItem("user", JSON.stringify(response.data.user));
                 setUser(response.data.user);
-                localStorage.setItem("user_email", response.data.user.email);
-                localStorage.setItem("user_id", response.data.user.id);
-                alert("Log in, welcome " + response.data.user.name);
-                navigate('/librar.io/public/user');
-
-                /*if(response.data.user.rol === "Administrador") {
-                    console.log("Sesión iniciada", email, password);
-                    console.log("Administrador: ", response.data.user.nombre, " ", response.data.user.apellido);
-                    alert("Sesión iniciada " + response.data.user.nombre + " " + response.data.user.apellido)
-                    navigate('/example-app/public/admin');
-
-                }else if(response.data.user.rol === "Compras"){
-                    console.log("Sesión iniciada", email, password);
-                    console.log("Administrador: ", response.data.user.nombre, " ", response.data.user.apellido);
-                    alert("Sesión iniciada " + response.data.user.nombre + " " + response.data.user.apellido)
-                    navigate('/example-app/public/compras');
-
-                 }else{
-                    alert("Sesión iniciada " + response.data.user.nombre +  " " + response.data.user.apellido)
-                    navigate('/example-app/public/');
-
-                }*/
+                setUserLogged(true);
+                console.log(response.data.token);
+                
+                if(response.data.user.role === "admin"){
+                    alert("Logged in successfully as: ", response.data.user.role);
+                    navigate('/librar.io/public/admin')
+                } else {
+                    alert("Log in, welcome " + response.data.user.name);
+                    navigate('/librar.io/public/main');
+                }
             }).catch(error => {
-                console.log("error")
+                console.log(error)
                 setTextError("La contraseña o correo es incorrecto");
-                setFormOk(false);
-                console.log(textError);
+                alert(textError);
             });
     }
 

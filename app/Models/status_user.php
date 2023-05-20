@@ -9,7 +9,16 @@ class status_user extends Model
 {
     use HasFactory;
 
-    public function statuses(){
-        return $this -> hasMany(status::class);
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function users(){
+        return $this -> hasMany(User::class);
+    }
+
+    public function book(){
+        return $this -> hasMany(book::class);
     }
 }

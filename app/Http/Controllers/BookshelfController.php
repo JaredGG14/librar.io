@@ -10,11 +10,13 @@ class BookshelfController extends Controller
 {
     //shows teh bookshelf selecting only the score, review and finished at columns, because we need to get the info of the foreign keys
     //So we don't need the user_id nor book_id.
-    public function index($user){
-        $bookshelf = bookshelf::select('score', 'review', 'finished_at')
-        ->where('user_id', $user)
-        ->with('book: photo, title')
-        ->with('book.author: name, last_name');
+    public function index($user_id){
+        $bookshelf = bookshelf::where('user_id', $user_id)
+        ->with('book')
+        ->with('book.author')
+        ->with('book.genre')
+        ->with('status')
+        ->get();
 
         return $bookshelf;
     }
@@ -53,6 +55,23 @@ class BookshelfController extends Controller
     public function getReadBooksByYear($user_id){
         $currentYear = date('Y');
         $books_read = bookshelf::where('user_id', $user_id)->where('finished_at', $currentYear)->get();
-        return $books_read();
+        return $books_read;
     }
+
+    public function store(Request $request){
+        $bookshelf = new bookshelf();
+        $bookshelf -> book_id = $request -> book_id;
+        $bookshelf -> user_id = $request -> user_id;
+        $bookshelf -> score = $request -> score;
+        $bookshelf -> review = $request -> review;
+        $bookshelf -> finished_at = $request -> finished_at;
+        $bookshelf -> save();
+
+        return $bookshelf;
+    }
+
+    public function destroy(Request $request) {
+        $bookshelf = bookshelf::destroy($request -> id);
+    }
+
 }

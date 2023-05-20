@@ -264,7 +264,7 @@ function BookUpdate(props) {
                         </Form.Select>
                     </Form.Group>
                     <Form.Label>Genre ID</Form.Label>
-                    <Form.Select name="genre_id" value={genre_id} onChange={(e) => setAuthor_id(e.target.value)} required>
+                    <Form.Select name="genre_id" value={genre_id} onChange={(e) => setGenre_id(e.target.value)} required>
                         <option value="">Select an Genre</option>
                         {GenreFetch.map((G) => (
                             <option value={G.id} key={G.id}>{G.description}</option>
@@ -377,21 +377,20 @@ function Admin_Books() {
         return null;
     }
 
-    const getBookshelfFetch = async () => {
+    const getBookFetch = async () => {
         try {
-            const response = await axios.get(`http://localhost/librar.io/public/api/bookshelf/${user_id}`);
-            setBookshelfFetch(response.data);
+            const response = await axios.get(`http://localhost/librar.io/public/api/books/1`);
+            setBookFetch(response.data);
         } catch (error) {
             // Manejar el error de solicitud GET
             console.error(error);
         }
     }
 
-    const [BookshelfFetch, setBookshelfFetch] = useState([]);
+    const [BookFetch, setBookFetch] = useState([]);
     useEffect(() => {
-        getBookshelfFetch()
+        getBookFetch()
     }, [])
-
 
     return (
         <div className='container py-5'>
@@ -421,30 +420,27 @@ function Admin_Books() {
                                     <th scope="col">#</th>
                                     <th scope="col">Photo</th>
                                     <th scope="col">Title</th>
-                                    <th scope="col">Author</th>
-                                    <th scope="col">Genre</th>
-                                    <th scope="col">Score</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Started At</th>
-                                    <th scope="col">Finished At</th>
-                                    <th scope="col">Links</th>
+                                    <th scope="col"># Author</th>
+                                    <th scope="col"># Genre</th>
+                                    <th scope="col">Avg Score</th>
+                                    <th scope="col">Synopsis</th>
+                                    <th scope="col">Physical Link</th>
+                                    <th scope="col">Digital Link</th>
                                     <th scope="col">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-
-                                {BookshelfFetch.map((B) => (
+                                {BookFetch.map((B) => (
                                     <tr key={B.id}>
                                         <th scope="row">{B.id}</th>
-                                        <td><Image src={B.book.photo} width={100} title={B.book.synopsis}></Image></td>
-                                        <td className='text-break' width={80}>{B.book.title}</td>
-                                        <td>{B.book.author.name} {B.book.author.last_name}</td>
-                                        <td>{B.book.genre.description}</td>
-                                        <td>{B.score}</td>
-                                        <td>{B.status.description}</td>
-                                        <td className='text-break'>{B.started_at}</td>
-                                        <td className='text-break'>{B.finished_at}</td>
-                                            <td className='text-break'><a href={B.book.physical_link}>Physical Link</a> <a href={B.book.digital_link}>Digital Link</a></td>
+                                        <td><Image src={B.photo} width={100}></Image></td>
+                                        <td className='text-break' width={80}>{B.title}</td>
+                                        <td>{B.author_id}</td>
+                                        <td>{B.genre_id}</td>
+                                        <td>{B.avg_score}</td>
+                                        <td className='text-break'>{B.synopsis}</td>
+                                        <td className='text-break'><a href={B.physical_link}>Physical Link</a></td>
+                                        <td className='text-break'><a href={B.digital_link}>Digital Link</a></td>
                                         <td>
                                             <IconButton aria-label="brush" onClick={() => editBook(B)} >
                                                 <BrushIcon color='secondary' />

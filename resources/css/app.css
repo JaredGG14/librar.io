@@ -1,3 +1,20 @@
-.NavbarColor{
+.NavbarColor {
     background-color: #e8e8e8;
 }
+
+.MenuColor {
+    background-color: #900C3F;
+    color: white;
+    font-family: monospace;    
+}
+
+.CenterContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LeftItems {
+    justify-content: right;
+}
+

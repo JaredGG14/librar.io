@@ -16,6 +16,7 @@ class BookSeeder extends Seeder
         DB::table('books')->insert([
             'title' => 'IT',
             'author_id' => '1', //Author = Stephen King
+            'genre_id' => '1',
             'avg_score' => '4.25',
             'synopsis' => '
             It’s a small city, a place as hauntingly familiar as your own hometown. Only in Derry the haunting is real ...
@@ -29,6 +30,7 @@ class BookSeeder extends Seeder
         DB::table('books')->insert([
             'title' => 'The Stand',
             'author_id' => '1', //Author = Stephen King
+            'genre_id' => '12',
             'avg_score' => '4.34',
             'synopsis' => "
             First came the days of the plague. Then came the dreams. Dark dreams that warned of the coming of the dark man. The apostate of death, his worn-down boot heels tramping the night roads. The warlord of the charnel house and Prince of Evil. His time is at hand. His empire grows in the west and the Apocalypse looms.
@@ -42,6 +44,7 @@ class BookSeeder extends Seeder
         DB::table('books')->insert([
             'title' => 'The Shining',
             'author_id' => '1', //Author = Stephen King
+            'genre_id' => '10',
             'avg_score' => '4.26',
             'synopsis' => "
             Jack Torrance's new job at the Overlook Hotel is the perfect chance for a fresh start. As the off-season caretaker at the atmospheric old hotel, he'll have plenty of time to spend reconnecting with his family and working on his writing. But as the harsh winter weather sets in, the idyllic location feels ever more remote...and more sinister. And the only one to notice the strange and terrible forces gathering around the Overlook is Danny Torrance, a uniquely gifted five-year-old.
@@ -54,6 +57,7 @@ class BookSeeder extends Seeder
         DB::table('books')->insert([
             'title' => 'Lord of the Rings: The Fellowship of the Ring',
             'author_id' => '2', //Author =
+            'genre_id' => '2',
             'avg_score' => '4.38',
             'synopsis' => '',
             'photo' => 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654215925i/61215351.jpg',
@@ -64,6 +68,7 @@ class BookSeeder extends Seeder
         DB::table('books')->insert([
             'title' => 'Lord of the Rings: The Two Towers',
             'author_id' => '2', //Author =
+            'genre_id' => '2',
             'avg_score' => '4.47',
             'synopsis' => '',
             'photo' => 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654216149i/61215372.jpg',
@@ -74,6 +79,7 @@ class BookSeeder extends Seeder
         DB::table('books')->insert([
             'title' => 'Lord of the Rings: The Return of the King',
             'author_id' => '2', //Author = J.R.R. Tolkien
+            'genre_id' => '2',
             'avg_score' => '4.55',
             'synopsis' => '',
             'photo' => 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654216226i/61215384.jpg',

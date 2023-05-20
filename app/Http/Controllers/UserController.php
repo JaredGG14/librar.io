@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index($email)
+    public function index($user_email)
     {
-        $user = User::where('email', $email)->first();
+        $user = User::where('email', $user_email)->get();
         return $user;
     }
 
     public function user_profile($user_id){
-        $user_profile = User::select('nickname', 'age', 'description', 'photo')->where('id', $user_id)->first();
+        $user_profile = User::select('nickname', 'age', 'description', 'photo')->where('id', $user_id)->get();
         return $user_profile;
     }
 
