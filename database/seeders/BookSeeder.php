@@ -14,6 +14,7 @@ class BookSeeder extends Seeder
     public function run(): void
     {
         DB::table('books')->insert([
+            'id' => '1',
             'title' => 'IT',
             'author_id' => '1', //Author = Stephen King
             'genre_id' => '1',
@@ -28,6 +29,7 @@ class BookSeeder extends Seeder
         ]);
 
         DB::table('books')->insert([
+            'id' => '2',
             'title' => 'The Stand',
             'author_id' => '1', //Author = Stephen King
             'genre_id' => '12',
@@ -42,6 +44,7 @@ class BookSeeder extends Seeder
         ]);
 
         DB::table('books')->insert([
+            'id' => '3',
             'title' => 'The Shining',
             'author_id' => '1', //Author = Stephen King
             'genre_id' => '10',
@@ -53,8 +56,9 @@ class BookSeeder extends Seeder
             'physical_link' => 'https://www.amazon.com.mx/El-resplandor-Stephen-King/dp/6073118392/ref=sr_1_1?keywords=el+resplandor+stephen+king&qid=1681173487&sprefix=El+respl%2Caps%2C343&sr=8-1',
             'digital_link' => 'https://www.amazon.com.mx/El-resplandor-Stephen-King-ebook/dp/B007TID0R6/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=1681172605&sr=1-1',
         ]);
-        
+
         DB::table('books')->insert([
+            'id' => '4',
             'title' => 'Lord of the Rings: The Fellowship of the Ring',
             'author_id' => '2', //Author =
             'genre_id' => '2',
@@ -66,6 +70,7 @@ class BookSeeder extends Seeder
         ]);
 
         DB::table('books')->insert([
+            'id' => '5',
             'title' => 'Lord of the Rings: The Two Towers',
             'author_id' => '2', //Author =
             'genre_id' => '2',
@@ -77,6 +82,7 @@ class BookSeeder extends Seeder
         ]);
 
         DB::table('books')->insert([
+            'id' => '6',
             'title' => 'Lord of the Rings: The Return of the King',
             'author_id' => '2', //Author = J.R.R. Tolkien
             'genre_id' => '2',
@@ -86,246 +92,5 @@ class BookSeeder extends Seeder
             'physical_link' => '',
             'digital_link' => '',
         ]);
-        /*
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-
-        DB::table('books')->insert([
-            'title' => '',
-            'author_id' => '', //Author =
-            'avg_score' => '',
-            'synopsis' => '',
-            'photo' => '',
-            'physical_link' => '',
-            'digital_link' => '',
-        ]);
-        */
     }
 }

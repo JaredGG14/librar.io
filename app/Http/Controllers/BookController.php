@@ -40,7 +40,7 @@ class BookController extends Controller
         $book->digital_link = $request->digital_link;
         $book->save();
 
-        return $book;
+        return $book; 
     }
 
     public function update(Request $request)

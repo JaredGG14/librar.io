@@ -359,6 +359,7 @@ function Admin_Books() {
     const [modalShow2, setModalShow2] = useState(false);
     const [modalShow3, setModalShow3] = useState(false);
     const [bookData, setBookData] = useState({});
+    const navigate = useNavigate();
 
     function editBook(book) {
         setModalShow2(true)
